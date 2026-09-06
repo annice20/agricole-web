@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Active le mode sombre piloté par une classe .dark sur <html>, plutôt
+   que par la préférence système uniquement (comportement par défaut de
+   Tailwind v4). Sans cette ligne, basculer la classe "dark" ne fait
+   rien : c'est le changement obligatoire depuis la v4 (plus de
+   tailwind.config.js pour ça). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================================================
+   MODE SOMBRE — overrides globaux
+   =========================================================================
+   Plutôt que d'ajouter des classes dark: dans chaque page (il y en a
+   trop), on cible ici directement les combinaisons de classes Tailwind
+   qui se répètent à l'identique dans presque tous les fichiers .jsx
+   (fond dégradé vert, cartes glassmorphism blanches, header, textes
+   verts). Comme ce sont des classes utilitaires globales, une seule
+   règle ici s'applique partout où la classe est utilisée, sans toucher
+   au JSX.
+   ========================================================================= */
+
+.dark body {
+  background-color: #0a1610;
+}
+
+/* Fond dégradé principal de chaque page */
+.dark .bg-gradient-to-br.from-green-100.via-green-200.to-green-300 {
+  --tw-gradient-from: #0f1f16;
+  --tw-gradient-to: #142a1d;
+  --tw-gradient-stops: var(--tw-gradient-from), #0a1610, var(--tw-gradient-to);
+  background-color: #0a1610;
+}
+
+/* Cartes glassmorphism (bg-white/40, /50, /60, /80, etc.) */
+.dark .bg-white\/40 {
+  background-color: rgba(20, 30, 22, 0.4);
+}
+.dark .bg-white\/50 {
+  background-color: rgba(20, 30, 22, 0.5);
+}
+.dark .bg-white\/60 {
+  background-color: rgba(20, 30, 22, 0.6);
+}
+.dark .bg-white\/70 {
+  background-color: rgba(20, 30, 22, 0.7);
+}
+.dark .bg-white\/80 {
+  background-color: rgba(20, 30, 22, 0.8);
+}
+.dark .bg-white\/95 {
+  background-color: rgba(15, 22, 17, 0.95);
+}
+.dark .bg-white {
+  background-color: #142a1d;
+}
+
+/* Bordures blanches translucides des cartes */
+.dark .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.dark .border-white\/40 {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.dark .border-white\/50 {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Textes verts foncés → clairs pour rester lisibles sur fond sombre.
+   Ne touche pas text-green-100/200/400, déjà utilisés pour du texte
+   clair sur la sidebar (qui reste inchangée, elle est déjà sombre). */
+.dark .text-green-800,
+.dark .text-green-900,
+.dark .text-green-950 {
+  color: #d1fae5;
+}
+.dark .text-green-700 {
+  color: #86efac;
+}
+
+/* Champs de formulaire (inputs, textarea, select) sur fond blanc plein */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #1a2e22;
+  color: #d1fae5;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgba(209, 250, 229, 0.35);
+}
