@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:8081/api/utilisateurs";
+const API_URL = "https://agricole-backend.onrender.com/api/utilisateurs";
 
 export const creerUtilisateur = (data) => axios.post(API_URL, data);
 

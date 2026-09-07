@@ -108,7 +108,9 @@ export default function MesDemandes() {
 
   const chargerProgrammes = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/api/programmes");
+      const res = await axios.get(
+        "https://agricole-backend.onrender.com/api/programmes",
+      );
       // Seuls les programmes actifs peuvent recevoir de nouvelles demandes
       setProgrammes(res.data.filter((p) => p.actif));
     } catch {

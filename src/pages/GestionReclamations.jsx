@@ -13,7 +13,7 @@ import { getSession } from "../utils/auth";
 import MyNavbar from "./MyNavbar";
 import { ThemeProvider } from "../context/ThemeContext";
 
-const API = "http://localhost:8081/api/reclamations";
+const API = "https://agricole-backend.onrender.com/api/reclamations";
 
 const ROLES_AUTORISES = ["ADMIN_NATIONAL", "RESPONSABLE_REGIONAL"];
 

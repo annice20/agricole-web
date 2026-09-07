@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:8081/api/notifications";
+const API_URL = "https://agricole-backend.onrender.com/api/notifications";
 
 export const getNotifications = async (utilisateurId) => {
   if (!utilisateurId) {

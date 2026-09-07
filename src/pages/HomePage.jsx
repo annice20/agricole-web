@@ -197,7 +197,9 @@ export default function HomePage() {
   useEffect(() => {
     const chargerStats = async () => {
       try {
-        const res = await axios.get("http://localhost:8081/api/public/stats");
+        const res = await axios.get(
+          "https://agricole-backend.onrender.com/api/public/stats",
+        );
         setLiveStats(res.data);
       } catch {
         setLiveStats({

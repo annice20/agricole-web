@@ -64,14 +64,17 @@ export default function AjouterDistribution() {
     try {
       setLoading(true);
       const session = getSession(); // Récupération de la session pour l'agentId
-      await axios.post("http://localhost:8081/api/distributions", {
-        demandeId: Number(demandeId),
-        montant: Number(formData.montant),
-        dateDistribution: formData.dateDistribution,
-        description: formData.description,
-        preuveDistribution: formData.preuveDistribution,
-        agentId: session?.id ? Number(session.id) : null,
-      });
+      await axios.post(
+        "https://agricole-backend.onrender.com/api/distributions",
+        {
+          demandeId: Number(demandeId),
+          montant: Number(formData.montant),
+          dateDistribution: formData.dateDistribution,
+          description: formData.description,
+          preuveDistribution: formData.preuveDistribution,
+          agentId: session?.id ? Number(session.id) : null,
+        },
+      );
       toast.success("Distribution enregistrée avec succès");
       navigate(-1);
     } catch (error) {

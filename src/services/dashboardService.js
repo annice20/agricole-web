@@ -2,7 +2,7 @@ import axios from "axios";
 import { getSession } from "../utils/auth"; // Récupère la session (où le token est stocké)
 
 const api = axios.create({
-  baseURL: "http://localhost:8081",
+  baseURL: "https://agricole-backend.onrender.com",
 });
 
 // Cet intercepteur s'assure d'injecter le token TOUT JUSTE récupéré lors de l'OTP

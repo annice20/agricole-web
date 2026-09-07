@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/equipements";
+const API_URL = "https://agricole-backend.onrender.com/api/equipements";
 
 export const getEquipements = async () => {
   const response = await axios.get(API_URL);

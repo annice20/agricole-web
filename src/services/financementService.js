@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/financements";
+const API_URL = "https://agricole-backend.onrender.com/api/financements";
 
 export const getAllFinancements = () => axios.get(API_URL);
 

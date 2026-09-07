@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/reclamations";
+const API_URL = "https://agricole-backend.onrender.com/api/reclamations";
 
 /**
  * Récupérer toutes les réclamations de l'agriculteur connecté

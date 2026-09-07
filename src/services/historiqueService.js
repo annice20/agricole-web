@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/historique";
+const API_URL = "https://agricole-backend.onrender.com/api/historique";
 
 export const getHistoriqueActions = () => {
   return axios.get(API_URL);

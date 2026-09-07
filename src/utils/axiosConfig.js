@@ -19,7 +19,7 @@ function lireToken() {
 }
 
 // Configuration globale de l'URL de base (optionnel mais recommandé)
-axios.defaults.baseURL = "http://localhost:8081";
+axios.defaults.baseURL = "https://agricole-backend.onrender.com";
 
 // Intercepteur de Requête : Attache "Authorization: Bearer <token>"
 axios.interceptors.request.use(

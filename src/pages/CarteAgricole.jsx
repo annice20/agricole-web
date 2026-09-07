@@ -73,9 +73,13 @@ export default function CarteAgricole() {
     setLoading(true);
     try {
       const [resGeo, resStats, resTous] = await Promise.all([
-        axios.get("http://localhost:8081/api/geo/exploitations"),
-        axios.get("http://localhost:8081/api/geo/statistiques-region"),
-        axios.get("http://localhost:8081/api/agriculteurs"),
+        axios.get(
+          "https://agricole-backend.onrender.com/api/geo/exploitations",
+        ),
+        axios.get(
+          "https://agricole-backend.onrender.com/api/geo/statistiques-region",
+        ),
+        axios.get("https://agricole-backend.onrender.com/api/agriculteurs"),
       ]);
       setExploitations(resGeo.data);
       setStatsRegions(resStats.data);
@@ -131,7 +135,7 @@ export default function CarteAgricole() {
 
       if (coords) {
         await axios.put(
-          `http://localhost:8081/api/geo/localiser/${agriculteur.id}`,
+          `https://agricole-backend.onrender.com/api/geo/localiser/${agriculteur.id}`,
           null,
           {
             params: { latitude: coords.latitude, longitude: coords.longitude },

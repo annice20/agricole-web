@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8081/api/distributions";
+const API_URL = "https://agricole-backend.onrender.com/api/distributions";
 
 export const getDistributions = () => axios.get(API_URL);
 

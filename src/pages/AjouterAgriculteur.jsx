@@ -213,7 +213,7 @@ export default function AjouterAgriculteur() {
 
     try {
       await axios.post(
-        "http://localhost:8081/api/agriculteurs",
+        "https://agricole-backend.onrender.com/api/agriculteurs",
         donneesAEnvoyer,
       );
       toast.success("Producteur enregistré avec succès !");

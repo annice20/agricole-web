@@ -66,7 +66,7 @@ export default function GestionDemandes() {
           return;
         }
         const response = await axios.get(
-          `http://localhost:8081/api/demandes/region/${session.regionId}`,
+          `https://agricole-backend.onrender.com/api/demandes/region/${session.regionId}`,
         );
         setDemandes(response.data);
         return;
@@ -96,9 +96,12 @@ export default function GestionDemandes() {
 
   const changerStatut = async (id, nouveauStatut) => {
     try {
-      await axios.patch(`http://localhost:8081/api/demandes/${id}/statut`, {
-        statut: nouveauStatut,
-      });
+      await axios.patch(
+        `https://agricole-backend.onrender.com/api/demandes/${id}/statut`,
+        {
+          statut: nouveauStatut,
+        },
+      );
       toast.success(`Statut mis à jour : ${nouveauStatut}`);
       chargerDemandes();
     } catch {
@@ -108,7 +111,9 @@ export default function GestionDemandes() {
 
   const chargerProgrammes = async () => {
     try {
-      const res = await axios.get("http://localhost:8081/api/programmes");
+      const res = await axios.get(
+        "https://agricole-backend.onrender.com/api/programmes",
+      );
       setProgrammes(res.data);
     } catch {
       toast.error("Impossible de charger les programmes");

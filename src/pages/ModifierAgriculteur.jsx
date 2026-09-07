@@ -70,7 +70,7 @@ export default function ModifierAgriculteur() {
     const chargerAgriculteur = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8081/api/agriculteurs/${id}`,
+          `https://agricole-backend.onrender.com/api/agriculteurs/${id}`,
         );
         const a = res.data;
 
@@ -213,7 +213,7 @@ export default function ModifierAgriculteur() {
 
     try {
       await axios.put(
-        `http://localhost:8081/api/agriculteurs/${id}`,
+        `https://agricole-backend.onrender.com/api/agriculteurs/${id}`,
         donneesAEnvoyer,
       );
       toast.success("Fiche agriculteur mise à jour avec succès !");

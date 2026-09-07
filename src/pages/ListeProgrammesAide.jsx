@@ -95,7 +95,9 @@ export default function ListeProgrammesAide() {
   const fetchProgrammes = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:8081/api/programmes");
+      const res = await axios.get(
+        "https://agricole-backend.onrender.com/api/programmes",
+      );
       setProgrammes(res.data);
     } catch {
       toast.error("Impossible de charger les programmes");
@@ -113,7 +115,7 @@ export default function ListeProgrammesAide() {
     }
     try {
       await axios.patch(
-        `http://localhost:8081/api/programmes/${programme.id}`,
+        `https://agricole-backend.onrender.com/api/programmes/${programme.id}`,
         {
           actif: !programme.actif,
         },

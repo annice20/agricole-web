@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8081/api/auth";
+const API = "https://agricole-backend.onrender.com/api/auth";
 
 export const login = async (data) => {
   return axios.post(`${API}/login`, data);
@@ -39,10 +39,12 @@ export const clearSession = () => {
 };
 
 export const demanderReinitialisation = (email) =>
-  axios.post("http://localhost:8081/api/auth/forgot-password", { email });
+  axios.post("https://agricole-backend.onrender.com/api/auth/forgot-password", {
+    email,
+  });
 
 export const reinitialiserMotDePasse = (token, nouveauMotDePasse) =>
-  axios.post("http://localhost:8081/api/auth/reset-password", {
+  axios.post("https://agricole-backend.onrender.com/api/auth/reset-password", {
     token,
     nouveauMotDePasse,
   });

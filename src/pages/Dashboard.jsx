@@ -75,7 +75,7 @@ export default function Dashboard() {
     try {
       toast.info("Génération du rapport PDF en cours...");
       const response = await axios.get(
-        "http://localhost:8081/api/rapports/regional/pdf",
+        "https://agricole-backend.onrender.com/api/rapports/regional/pdf",
         {
           responseType: "blob",
           headers: {
